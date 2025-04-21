@@ -1,0 +1,34 @@
+name: Publicar a GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositori
+        uses: actions/checkout@v3
+
+      - name: Instal·lar .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '7.0.x'
+
+      - name: Restaurar dependències
+        run: dotnet restore
+
+      - name: Compilar el projecte
+        run: dotnet publish -c Release -o out
+
+      - name: Publicar a GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_PAGES_TOKEN }}
+          publish_dir: ./out/wwwroot
+          publish_branch: gh-pages
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
