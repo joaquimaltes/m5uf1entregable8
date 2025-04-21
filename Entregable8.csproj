@@ -4,6 +4,8 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <BaseHref>/m5uf1entregable8/</BaseHref>
+    <BlazorEnableIntegrity>false</BlazorEnableIntegrity>
   </PropertyGroup>
 
   <ItemGroup>
