@@ -8,6 +8,7 @@
 
     <BaseHref>/m5uf1entregable8/</BaseHref>
     <BlazorEnableIntegrity>false</BlazorEnableIntegrity>
+    <BlazorCacheBootResources>false</BlazorCacheBootResources>
   </PropertyGroup>
 
   <ItemGroup>
